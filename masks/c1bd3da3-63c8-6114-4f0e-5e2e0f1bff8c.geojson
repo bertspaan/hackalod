@@ -1,0 +1,40 @@
+{
+    "bbox": [
+        4.895507,
+        52.36836,
+        4.896794,
+        52.36955
+    ],
+    "features": [
+        {
+            "bbox": [
+                4.895507,
+                52.36836,
+                4.896794,
+                52.36955
+            ],
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            4.896237,
+                            52.36955
+                        ],
+                        [
+                            4.896237,
+                            52.36955
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": "c1bd3da3-63c8-6114-4f0e-5e2e0f1bff8c.tiff:0",
+            "properties": {
+                "filename": "c1bd3da3-63c8-6114-4f0e-5e2e0f1bff8c.tiff",
+                "val": 1
+            },
+            "type": "Feature"
+        }
+    ],
+    "type": "FeatureCollection"
+}
