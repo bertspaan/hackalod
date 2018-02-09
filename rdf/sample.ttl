@@ -1,0 +1,8 @@
+<http://beeldbank.amsterdam.nl/afbeelding/DUIZ01432000001>
+	dct:spatial [
+		dc:identifier "f3f741b9-4f5f-9afa-9c58-ee148d3cdf3a"^^xsd:string ;
+		geo:hasGeometry [ geo:asWKT " ... " ] ;
+		dc:type "outline"^^xsd:string ;
+		dc:source "url van geotif" ;
+		wdt:P2046 23456^^xsd:integer ;
+	] .
