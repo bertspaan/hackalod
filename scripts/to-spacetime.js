@@ -52,6 +52,10 @@ H(fs.createReadStream(path.join(__dirname, '..', 'data', 'links.ndjson')))
   .map((data) => {
     const geometry = data.mask.features[0].geometry
 
+    if (!geometry) {
+      return
+    }
+    
     const area = Math.round(turf.area(geometry))
     const kmSquared = roundDecimals(area * 0.000001, 5)
 
@@ -71,6 +75,7 @@ H(fs.createReadStream(path.join(__dirname, '..', 'data', 'links.ndjson')))
       geometry
     }
   })
+  .compact()
   .map(JSON.stringify)
   .intersperse('\n')
   .pipe(fs.createWriteStream(path.join(__dirname, '..', 'data', 'maps.ndjson')))
