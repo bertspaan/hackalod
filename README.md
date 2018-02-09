@@ -10,11 +10,13 @@ Plan voor http://hackalod.com/:
 
 Scripts:
 
-1. [`scrape-beeldbank.js`](scrape-beeldbank.js)
-2. [`create-links.js`](create-links.js)
-3. [`download-tiffs.sh`](download-tiffs.sh)
-4. [`extract-masks.sh`](extract-masks.sh)
-5. [`to-spacetime.js`](to-spacetime.js)
+1. [`scrape-beeldbank.js`](scripts/scrape-beeldbank.js)
+2. [`create-links.js`](scripts/create-links.js)
+3. [`download-tiffs.sh`](scripts/download-tiffs.sh)
+4. [`extract-masks.sh`](scripts/extract-masks.sh)
+5. [`to-spacetime.js`](scripts/to-spacetime.js)
+6. [`feature-collection.js`](scripts/feature-collection.js)
+67. [`group-maps.js`](scripts/group-maps.js)
 
 Example links:
 
