@@ -9,41 +9,40 @@ module.exports = {
   },
   properties: (object) => ({
     id: object.id,
-    uuid: object.data.uuid,
     imageId: object.data.imageId,
     name: object.name,
     year: object.validSince
   }),
   geometry: {
     type: 'Polygon',
-    coordinates: [
+    coordinates:  [
       [
         [
-          -73.424377,
-          40.436495
+          5.3063969257812635,
+          52.05417909696046
         ],
         [
-          -73.424377,
-          41.15591
+          5.3063969257812635,
+          52.63472952447904
         ],
         [
-          -74.347229,
-          41.15591
+          4.383544925781263,
+          52.63472952447904
         ],
         [
-          -74.347229,
-          40.436495
+          4.383544925781263,
+          52.05417909696046
         ],
         [
-          -73.424377,
-          40.436495
+          5.3063969257812635,
+          52.05417909696046
         ]
       ]
     ]
   },
-  yearMin: 1850,
-  yearMax: 1949,
-  maxArea: 5000000,
+  yearMin: 1000,
+  yearMax: 2020,
+  maxArea: 10000000,
   buffer: 25,
   simplifyTolerance: 0.00005
 }
