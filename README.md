@@ -2,11 +2,17 @@
 
 ## Results
 
+### Map Area Data
+
 - [Map area data](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
 
 [![](geojson.png)](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
 
+### Map Me
+
 - [Map Me](http://lab.adamlink.nl/mapme/index.html)
+
+[![](mapme.png)](http://lab.adamlink.nl/mapme/index.html)
 
 Map area data is available via the [Adamlink SPARQL endpoint](https://data.adamlink.nl/menno/alles/services/alles#). Example query:
 
@@ -31,6 +37,8 @@ select ?kaart ?img ?x ?y ?title {
 ORDER BY ASC(?km2)
 limit 5
 ```
+
+### Amsterdam op de Kaart
 
 - [Amsterdam op de Kaart](http://bertspaan.nl/amsterdam-op-de-kaart)
 
