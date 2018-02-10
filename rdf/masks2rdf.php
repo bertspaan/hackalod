@@ -43,7 +43,7 @@ while(! feof($file)){
 		$statements .= "      geo:hasGeometry [ geo:asWKT \"" . $wkt . "\" ] ;\n";
 		//$statements .= "      dc:source \"url van geotif?\" ;\n";
 		$statements .= "      dc:type \"outline\"^^xsd:string ;\n";
-		//$statements .= "      dinges:dinges " . $eastwestmeters . "^^xsd:integer ;\n";
+		$statements .= "      dinges:dinges " . $eastwestmeters . "^^xsd:integer ;\n";
 		$statements .= "   ] . \n\n";
 		file_put_contents($turtlefile, $statements, FILE_APPEND);
 
