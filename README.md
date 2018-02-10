@@ -2,11 +2,36 @@
 
 ## Results
 
-- [Map mask data](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
+- [Map area data](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
 
 ![](geojson.png)
 
 - [Map Me](http://lab.adamlink.nl/mapme/index.html)
+
+Map area data is available via the [Adamlink SPARQL endpoint](https://data.adamlink.nl/menno/alles/services/alles#). Example query:
+
+```sparql
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX sem: <http://semanticweb.cs.vu.nl/2009/11/sem/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX wdt: <http://www.wikidata.org/prop/direct/>
+select ?kaart ?img ?x ?y ?title {
+  ?kaart dct:spatial ?spatial .
+  ?kaart foaf:depiction ?img .
+  ?kaart dc:title ?title .
+  ?spatial dc:type "outline"^^xsd:string .
+  ?spatial geo:hasGeometry/geo:asWKT ?wktmap .
+  ?spatial wdt:P2046 ?km2 .
+  bind (bif:st_geomfromtext("POINT(4.895168 52.370216)") as ?x)
+  bind (bif:st_geomfromtext(?wktmap) as ?y)
+  FILTER (bif:st_intersects(?x, ?y))
+}
+ORDER BY ASC(?km2)
+limit 5
+```
+
 - [Amsterdam op de Kaart](http://bertspaan.nl/amsterdam-op-de-kaart)
 
 ![](https://raw.githubusercontent.com/bertspaan/amsterdam-op-de-kaart/master/screenshot.png)
