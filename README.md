@@ -1,5 +1,12 @@
 # HackaLOD 2018
 
+Code, data and tools for HackaLOD 2018 hackathon, team __Hic Sunt Leones__:
+
+- [Menno den Engelse](http://www.islandsofmeaning.nl/)
+- [Bert Spaan](http://bertspaan.nl)
+
+Goal: make it easier to browse and find [georectified historical maps](http://beeldbank.amsterdam.nl/beeldbank/indeling/grid?f_string_geoserver_store%5B0%5D=%2A) from the Amsterdam Municipal Archives.
+
 ## Results
 
 ### Map Area Data
