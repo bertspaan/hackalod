@@ -2,15 +2,14 @@
 
 ## Results
 
-Websites:
+- [Map mask data](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
 
-- bertspaan.nl/amsterdam-op-de-kaart
+![](geojson.png)
+
+- [Map Me](http://lab.adamlink.nl/mapme/index.html)
+- [Amsterdam op de Kaart](http://bertspaan.nl/amsterdam-op-de-kaart)
 
 ![](https://raw.githubusercontent.com/bertspaan/amsterdam-op-de-kaart/master/screenshot.png)
-
-Data:
-
-- Zie [`data`](data).
 
 ## Scripts
 
