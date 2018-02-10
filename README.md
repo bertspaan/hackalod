@@ -1,30 +1,34 @@
 # HackaLOD 2018
 
-Plan voor http://hackalod.com/:
+## Results
 
-- Scrape [alle gegeorefereerde kaarten uit Beeldbank](http://beeldbank.amsterdam.nl/beeldbank/indeling/grid?f_string_geoserver_store%5B0%5D=%2A)
-- Sla permalink en Geoserver Layer ID op
-- Download alle GeoTIFF's, maak GeoJSON van mask
-- Maak simpel website'je om masks te verbeteren
-- Kopieër Maps by Decade!
+Websites:
 
-Scripts:
+- bertspaan.nl/amsterdam-op-de-kaart
 
-1. [`scrape-beeldbank.js`](scripts/scrape-beeldbank.js)
-2. [`create-links.js`](scripts/create-links.js)
-3. [`download-tiffs.sh`](scripts/download-tiffs.sh)
-4. [`extract-masks.sh`](scripts/extract-masks.sh)
-5. [`to-spacetime.js`](scripts/to-spacetime.js)
-6. [`feature-collection.js`](scripts/feature-collection.js)
-67. [`group-maps.js`](scripts/group-maps.js)
+![](https://raw.githubusercontent.com/bertspaan/amsterdam-op-de-kaart/master/screenshot.png)
 
-Example links:
+Data:
+
+- Zie [`data`](data).
+
+## Scripts
+
+1. [`scrape-beeldbank.js`](scripts/scrape-beeldbank.js): scrape [all georectified maps from the Beeldbank](http://beeldbank.amsterdam.nl/beeldbank/indeling/grid?f_string_geoserver_store%5B0%5D=%2A)
+2. [`create-links.js`](scripts/create-links.js): save permalinks and UUIDs, merge with CSV data
+3. [`download-tiffs.sh`](scripts/download-tiffs.sh): download all GeoTIFFs from WMS server
+4. [`extract-masks.sh`](scripts/extract-masks.sh): use GDAL to turn GeoTIFFs into GeoJSON
+5. [`to-spacetime.js`](scripts/to-spacetime.js): convert to [NYC Space/Time Directory](http://spacetime.nypl.org) data format
+6. [`feature-collection.js`](scripts/feature-collection.js): create GeoJSON file with all masks
+7. [`group-maps.js`](scripts/group-maps.js): group all maps in groups of 25 years
+
+## Example links
 
   - Thumbnails:
     - http://images.memorix.nl/ams/thumb/140x140/de61435f-d219-0f32-8930-3ec48422fcea.jpg
     - http://images.memorix.nl/ams/thumb/1000x1000/1fc4dfdc-e92c-6f65-2f3a-e960f9e52222.jpg
   - GeoTIFF:
-    - http://geoserver.memorix.nl/geoserver/ams/wcs?service=WCS&version=2.0.1&request=GetCoverage&format=image/tiff&CoverageId=
+    - http://geoserver.memorix.nl/geoserver/ams/wcs?service=WCS&version=2.0.1&request=GetCoverage&format=image/tiff&CoverageId=ams:abef258-08a5-4057-b154-acc4c112c678
   - JPG:
     - http://beeldbank.amsterdam.nl/component/ams_memorixbeeld_download/?view=download&format=download&id=DUIZ00345000001
   - WMS:

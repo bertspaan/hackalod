@@ -6,7 +6,9 @@ regex='tiffs/(.*).tiff'
 
 for file in $DIR/../tiffs/*.tiff
 do
-  [[ $file =~ $regex ]]
-  uuid=${BASH_REMATCH[1]}
-  rio shapes --mask --precision 6 $file | simplify-geojson -t 0.0005 | python -mjson.tool > $DIR/../masks/$uuid.geojson
+  if [[ $file != *".original."* ]];then
+    [[ $file =~ $regex ]]
+    uuid=${BASH_REMATCH[1]}
+    rio shapes --mask --precision 6 $file | simplify-geojson -t 0.0005 | python -mjson.tool > $DIR/../masks/$uuid.geojson
+  fi
 done
