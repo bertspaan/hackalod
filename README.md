@@ -4,7 +4,7 @@
 
 - [Map area data](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
 
-![](geojson.png)
+[![](geojson.png)](https://github.com/bertspaan/hackalod/blob/master/data/all-masks.geojson)
 
 - [Map Me](http://lab.adamlink.nl/mapme/index.html)
 
@@ -34,7 +34,7 @@ limit 5
 
 - [Amsterdam op de Kaart](http://bertspaan.nl/amsterdam-op-de-kaart)
 
-![](https://raw.githubusercontent.com/bertspaan/amsterdam-op-de-kaart/master/screenshot.png)
+[![](https://raw.githubusercontent.com/bertspaan/amsterdam-op-de-kaart/master/screenshot.png)](http://bertspaan.nl/amsterdam-op-de-kaart)
 
 ## Scripts
 
