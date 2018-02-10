@@ -40,8 +40,13 @@ readCsv().then((mapsByPermalink) => {
   H(fs.createReadStream(path.join(__dirname, '..', 'data', 'scraped.json'))
     .pipe(JSONStream.parse('*')))
     .map((map) => {
-      const uuid = map.html.filter((s) => s)[0]
-      const id = map.permalink.replace('http://beeldbank.amsterdam.nl/afbeelding/', '')
+      const imageId = map.permalink.replace('http://beeldbank.amsterdam.nl/afbeelding/', '')
+
+      const imageUrl = map.imageUrl
+
+      const memorixUuid = /250\/(.*)\.jpg/.exec(imageUrl)[1]
+      const memorixGeotiffUuid = map.js.filter((s) => s)[0]
+      const geotiffUrl = `http://geoserver.memorix.nl/geoserver/ams/wcs?service=WCS&version=2.0.1&request=GetCoverage&format=image/tiff&CoverageId=ams:${memorixGeotiffUuid}`
 
       const fromCsv = mapsByPermalink[map.permalink]
 
@@ -56,9 +61,12 @@ readCsv().then((mapsByPermalink) => {
       }
 
       return {
-        id,
+        imageId,
+        imageUrl,
+        geotiffUrl,
         permalink: map.permalink,
-        uuid,
+        memorixUuid,
+        memorixGeotiffUuid,
         years,
         title
       }

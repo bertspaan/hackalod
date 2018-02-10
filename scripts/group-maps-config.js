@@ -1,7 +1,7 @@
 module.exports = {
   groupBy: (object) => {
     const getDate = (str) => new Date(`${str}`)
-    const bandSize = 10
+    const bandSize = 25
     const validSince = object.validSince
     const validUntil = object.validUntil
     const year = (getDate(validSince).getFullYear() + getDate(validUntil).getFullYear()) / 2
@@ -10,6 +10,8 @@ module.exports = {
   properties: (object) => ({
     id: object.id,
     imageId: object.data.imageId,
+    memorixUuid: object.data.memorixUuid,
+    memorixGeotiffUuid: object.data.memorixGeotiffUuid,
     name: object.name,
     year: object.validSince
   }),

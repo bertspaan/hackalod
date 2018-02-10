@@ -12,4 +12,4 @@ while read uuid ; do
     file $TIFF_DIR/$uuid.original.tiff > $TIFF_DIR/$uuid.info.txt
     rm $TIFF_DIR/$uuid.original.tiff
   fi
-done < <( cat $DIR/../data/links.ndjson | jq -r '.uuid' )
+done < <( cat $DIR/../data/links.ndjson | jq -r '.memorixGeotiffUuid' )

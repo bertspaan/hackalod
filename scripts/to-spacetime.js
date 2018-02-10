@@ -42,7 +42,7 @@ H(fs.createReadStream(path.join(__dirname, '..', 'data', 'links.ndjson')))
   .map(JSON.parse)
   .map((data) => ({
     ...data,
-    mask: readMask(data.uuid)
+    mask: readMask(data.memorixGeotiffUuid)
   }))
   .filter((data) => data.mask)
   // .map((data) => ({
@@ -55,21 +55,22 @@ H(fs.createReadStream(path.join(__dirname, '..', 'data', 'links.ndjson')))
     if (!geometry) {
       return
     }
-    
+
     const area = Math.round(turf.area(geometry))
     const kmSquared = roundDecimals(area * 0.000001, 5)
 
     const years = data.years
 
     return {
-      id: data.uuid,
+      id: data.imageId,
       type: 'st:Map',
       name: data.title,
       validSince: years && years[0],
       validUntil: years && years[1],
       data: {
-        imageId: data.id,
-        // http://geoserver.memorix.nl/geoserver/ams/wms?SERVICE=WMS&REQUEST=GetMap&VERSION=1.1.1&LAYERS=ams%3Adabef258-08a5-4057-b154-acc4c112c678&STYLES=&FORMAT=image%2Fpng&TRANSPARENT=true&HEIGHT=256&WIDTH=256&ZINDEX=1&SRS=EPSG%3A4326&BBOX=4.85595703125,52.36218321674427,4.8779296875,52.3755991766591
+        imageId: data.imageId,
+        memorixGeotiffUuid: data.memorixGeotiffUuid,
+        memorixUuid: data.memorixUuid,        
         area: kmSquared
       },
       geometry
