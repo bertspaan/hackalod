@@ -44,7 +44,7 @@ H(fs.createReadStream(path.join(__dirname, '..', 'data', 'links.ndjson')))
     ...data,
     mask: readMask(data.memorixGeotiffUuid)
   }))
-  .filter((data) => data.mask)
+  .filter((data) => data.mask && data.mask.features && data.mask.features.length)
   // .map((data) => ({
   //   ...data,
   //   dimensions: readDimensions(data.uuid)
